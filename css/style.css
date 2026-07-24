@@ -443,3 +443,10 @@ footer.site-footer{
   .galerie-exemples{grid-template-columns:1fr;}
   .mascotte-flottante{width:60px;}
 }
+
+.hero-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
