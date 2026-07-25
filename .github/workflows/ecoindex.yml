@@ -21,7 +21,22 @@ jobs:
         with:
           node-version: 20
 
-      - name: Installer les outils
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installer EcoIndex CLI
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install ecoindex-cli
+          python -m playwright install chromium
+
+      - name: Vérifier EcoIndex CLI
+        run: |
+          ecoindex-cli --help
+          ecoindex-cli analyze --help
+      - name: Installer les outils Lighthouse
         run: |
           npm install -g http-server lighthouse
 
@@ -30,6 +45,14 @@ jobs:
           http-server . -p 8080 &
           sleep 5
 
+      - name: Mesurer avec EcoIndex
+        run: |
+          ecoindex-cli analyze http://localhost:8080 --output ecoindex-results.json
+
+      - name: Afficher les résultats EcoIndex
+        run: |
+          cat ecoindex-results.json
+
       - name: Générer le rapport Lighthouse
         run: |
           lighthouse http://localhost:8080 \
@@ -37,13 +60,10 @@ jobs:
             --output=html \
             --output-path=rapport-lighthouse.html
 
-      - name: Contrôler le budget environnemental
-        run: |
-          chmod +x ecoindex.sh
-          ./ecoindex.sh
-
-      - name: Sauvegarder le rapport
+      - name: Sauvegarder les rapports
         uses: actions/upload-artifact@v4
         with:
-          name: rapport-lighthouse
-          path: rapport-lighthouse.html
+          name: rapports-ecoconception
+          path: |
+            rapport-lighthouse.html
+            ecoindex-results.json
