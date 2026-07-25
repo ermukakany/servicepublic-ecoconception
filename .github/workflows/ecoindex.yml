@@ -47,8 +47,8 @@ jobs:
 
       - name: Mesurer avec EcoIndex
         run: |
-          ecoindex-cli analyze http://localhost:8080 --output ecoindex-results.json
-
+         ecoindex-cli analyze http://localhost:8080 --output-file ecoindex-results.json
+      
       - name: Afficher les résultats EcoIndex
         run: |
           cat ecoindex-results.json
