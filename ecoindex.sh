@@ -13,7 +13,7 @@ echo "DOM : 161"
 
 echo ""
 echo "Carte d'identité"
-echo "EcoIndex : 88.63"
+echo "EcoIndex : 84"
 echo "Requêtes : 7"
 echo "Poids : 98 Ko"
 echo "DOM : 164"
