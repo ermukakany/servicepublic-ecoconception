@@ -6,7 +6,7 @@ echo "==============================="
 
 echo ""
 echo "Accueil"
-echo "EcoIndex : 88.93"
+echo "EcoIndex : 84"
 echo "Requêtes : 16"
 echo "Poids : 575 Ko"
 echo "DOM : 161"
