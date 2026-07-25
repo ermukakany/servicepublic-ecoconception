@@ -18,13 +18,22 @@ echo "Requêtes : 7"
 echo "Poids : 98 Ko"
 echo "DOM : 164"
 
+# -------------------------
+# Budget environnemental
+# -------------------------
+
+ECOINDEX=84
+BUDGET=85
+
 echo ""
 echo "Contrôle du budget environnemental..."
+echo "EcoIndex mesuré : $ECOINDEX"
+echo "Budget minimum : $BUDGET"
 
-if [ 88 -ge 80 ]; then
+if [ "$ECOINDEX" -lt "$BUDGET" ]; then
+    echo "❌ Régression détectée : budget dépassé"
+    exit 1
+else
     echo "✅ Budget respecté"
     exit 0
-else
-    echo "❌ Budget dépassé"
-    exit 1
 fi
