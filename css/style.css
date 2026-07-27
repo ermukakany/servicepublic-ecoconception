@@ -3,9 +3,6 @@
    NOTE PEDAGOGIQUE : ce fichier contient volontairement
    des pratiques non optimisées (cf. fichier ECOCONCEPTION.md)
    ========================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@500;600;700;800&family=Archivo:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=Caveat:wght@500;600&display=swap');
-
 :root{
   --bleu-france: #000091;
   --bleu-clair: #6a6af4;
@@ -22,7 +19,7 @@
 html{scroll-behavior:smooth;}
 body{
   margin:0;
-  font-family:'Source Sans 3', Arial, sans-serif;
+  font-family:Arial, sans-serif;
   color:var(--noir);
   background:var(--blanc);
   line-height:1.5;
@@ -30,7 +27,7 @@ body{
 }
 
 h1,h2,h3,h4{
-  font-family:'Archivo Expanded','Archivo',Arial,sans-serif;
+  font-family:Arial, sans-serif;
   font-weight:700;
   color:var(--bleu-france);
   margin-top:0;
