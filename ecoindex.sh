@@ -52,7 +52,7 @@ echo "Budget minimum : $BUDGET"
 # Détection de régression
 # -------------------------
 
-if [ "$ECOINDEX" -lt "$BUDGET" ]; then
+if awk "BEGIN {exit !($ECOINDEX < $BUDGET)}"; then
     echo "❌ Régression détectée : budget dépassé"
     exit 1
 else
