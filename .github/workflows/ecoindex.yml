@@ -53,6 +53,11 @@ jobs:
         run: |
           cat ecoindex-results.json
 
+      - name: Contrôler le budget environnemental
+        run: |
+          chmod +x ecoindex.sh
+          ./ecoindex.sh
+
       - name: Générer le rapport Lighthouse
         run: |
           lighthouse http://localhost:8080 \
